@@ -22,9 +22,9 @@ def lambda_handler(event, context):
     sqs_records = event["Records"]
 
     try:
-        blacklist=json.loads(os.environ['BLACKLIST'])
+        excludelist=json.loads(os.environ['EXCLUDELIST'])
     except:
-        blacklist=[]
+        excludelist=[]
 
     for payload_record in sqs_records:
         
@@ -40,10 +40,10 @@ def lambda_handler(event, context):
             arn = s3_record["s3"]["bucket"]["arn"]
 
             skip=0
-            for item in blacklist:
+            for item in excludelist:
                 if (item in mykey):
                     skip=1
-                    print(f'Not forwarding object <{mykey}> from bucket <{arn}> as it is in blacklist')
+                    print(f'Not forwarding object <{mykey}> from bucket <{arn}> as it is in exclude list')
                     
             
             if ("CloudTrail" in mykey):

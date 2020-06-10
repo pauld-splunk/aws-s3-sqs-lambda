@@ -68,7 +68,7 @@ These instructions are for the specific settings already defined in the function
 
 
 <table><tr><td><strong>Variable</strong></td><td><strong>Value</strong></td></tr>
-<tr><td>BLACKLIST</td><td>Enter a list of objects or partial names to not read into Splunk. The format of this should be as follows: ["object1","object2"] where object1 and object2 are the names/partial names of the object keys to blacklist. Make sure that the names are in double quotes, and in a list with square brackets. If no blacklist is needed, do not set this variable </td></tr>
+<tr><td>EXCLUDELIST</td><td>Enter a list of objects or partial names to not read into Splunk. The format of this should be as follows: ["object1","object2"] where object1 and object2 are the names/partial names of the object keys to exclusion list. Make sure that the names are in double quotes, and in a list with square brackets. If no exclusion is needed, do not set this variable </td></tr>
 <tr><td>CloudTrailQueueName</td><td>Name of the SQS queue set up in Stage 2 for CloudTrails</td></tr>
 <tr><td>ConfigQueueName</td><td>Name of the SQS queue set up in Stage 2 for Config</td></tr>
 <tr><td>vpcflowlogsQueueName</td><td>Name of the SQS queue set up in Stage 2 for vpc flow logs</td></tr>
