@@ -21,8 +21,8 @@ There is however another much easier setup and approach that can be taken using 
 
 Instructions are provided here on setting this up.
 
-![SQS Lambda Function overview](../images/diag.png)
+![SQS Lambda Function overview](images/diag.png)
 
-The sample function provides a use case where 3 different sources may be available in an S3 bucket. It uses function environment variables to set the queue names for each of the different sources, as well as a default queue for any other object that is put there. The function also can take a blacklist environment variable to “ignore” certain objects that may also be copied into the bucket but not needed to be sent to Splunk. 
+The sample function provides a use case where 3 different sources may be available in an S3 bucket. It uses function environment variables to set the queue names for each of the different sources, as well as a default queue for any other object that is put there. The function also can take a exclusion list environment variable to “ignore” certain objects that may also be copied into the bucket but not needed to be sent to Splunk. 
 
 Other use cases may be added to the function, such as sending to different queues based on account numbers. This could enable logs from certain groups of accounts to be sent to different Splunk indexes for security or retention requirements.
